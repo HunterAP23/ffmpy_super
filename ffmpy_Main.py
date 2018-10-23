@@ -77,7 +77,7 @@ def probe(fileName):
 
     thePipe = subprocess.PIPE
 
-    myProbe = ffmpy.FFprobe(r"D:\Downloads\CompTools\Media\ffmpeg-20181007\bin\ffprobe.exe", probeCommands)
+    myProbe = ffmpy.FFprobe(r"ffprobe.exe", probeCommands) #Put the path to ffmpeg here
 
     myTuple = myProbe.run(None, thePipe, thePipe)
     tmpRate1 = myTuple[0]
@@ -185,7 +185,7 @@ if __name__ == '__main__':
             encoderCommands.append(tmpStuff[i])
 
         myPass = ffmpy.FFmpeg(
-            executable = r"D:\Downloads\CompTools\Media\ffmpeg-20181007\bin\ffmpeg.exe",
+            executable = r"ffmpeg.exe", #Put the path to ffmpeg here
                 outputs = {
                     str(vid[1]): encoderCommands
                 }
